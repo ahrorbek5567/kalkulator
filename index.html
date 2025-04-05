@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        .container{
+            max-width: 1400px;
+            margin: auto;
+        }
+        input, button, select{
+            width: 70%;
+            height: 30px;
+            margin: auto;
+            display: block;
+            border: 3px solid red ;
+        }
+        .red{
+            background:black;
+            transition: 5s;  
+        }
+        .white{
+            color: green;
+            
+        }
+        .in4{
+            color: grey;
+        }
+        .in2{
+            color: grey;
+        }
+        .in1{
+            color: grey;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container white" style="width: 400px;height: 450px;border: 3px solid red;margin-left: 600px;margin-top: 200px;">
+        <h1 style="color: red;margin-left: 40px;">Calculator</h1>
+        <h3 style="text-align: center;color: red;">1-raqam</h3>
+
+        <input id="input1" class="in1" type="text" placeholder="Faqat raqam kiriting!"><br>
+
+    <select name="sad" id="say" class="in3" style="color: gray;">
+         <option value="">Funksiyani  tanlang</option>
+         <option value="plus">Qo'shish(+)</option>
+         <option value="minus">Ayirish(-)</option>
+         <option value="ko'paytirish">ko'paytirish(*)</option>
+         <option value="bo'lish">Bo'lish(:)</option>
+    </select>
+      <h3 style="text-align: center;color: red;">2-raqam</h3>
+
+    <input type="text" id="input2" class="in2" placeholder="Faqat raqam kiriting!"><br>
+
+    <button onclick="qiymat()" class="in4">Natijani ko'rish uchun bosing!</button><br><br>
+
+    <div class="natija" style="border: 3px solid red ;color: red;width: 70%;  height: 30px;text-align: center;margin: auto;display: block;"><mark id="result"></mark></div>
+    
+    </div>
+    <button style="width: 10%;float: right;margin-right: 300px;margin-top: -50px;" class="btn">
+        tungi rejim
+    </button>
+   
+   
+   
+    <script>
+ function qiymat() {
+    let n1 =document.querySelector("#input1").value
+    let n2 =document.querySelector("#input2").value
+    let result =document.querySelector("#result")
+    let say=document.querySelector("#say").value
+    if (say==="plus") {
+        javob =Number(n1)+Number(n2)
+    }else if(say==="minus"){
+        javob=n1-n2
+    }else if(say==="ko'paytirish"){
+        javob=n1*n2
+    }else if(say==="bo'lish"){
+        javob=n1/n2
+    }
+    result.innerHTML=javob 
+ }
+
+ 
+        let btn =document.querySelector(".btn")
+        let body=document.querySelector("body")
+        let in1 =document.querySelector(".in1")
+        let in2 =document.querySelector(".in2")
+        let in3 =document.querySelector(".in3")
+        let in4 =document.querySelector(".in4")
+
+
+
+        btn.addEventListener('click',function(){
+            body.classList.toggle('red')
+            // body.classList.toggle('white')
+            in1.classList.toggle('red')
+            in2.classList.toggle('red')
+            in3.classList.toggle('red')
+            in4.classList.toggle('red')
+        })
+    
+
+    </script>
+</body>
+</html>
